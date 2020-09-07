@@ -86,10 +86,20 @@
 
         const hands = document.querySelectorAll('.hand');
 
+        /* TODO Transition fix
+        if(seconds === 0){
+            hands.forEach(hand => hand.style.setProperty("transition", "0.0s"));
+        }*/
+
         hoursHand.style.transform = `rotate(${hoursToDegrees}deg)`;
         minutesHand.style.transform = `rotate(${minutesToDegrees}deg)`;
         secondsHand.style.transform = `rotate(${secondsToDegrees}deg)`;
 
+        /*
+        if(seconds === 0){
+            hands.forEach(hand => hand.style.setProperty("transition", "all 0.05s", ));
+            hands.forEach(hand => hand.style.setProperty("transition-timing-function", "cubic-bezier(0, 2.93, 0.58, 1)"));
+        }*/
     }
 
     setInterval(setDate, 1000);
